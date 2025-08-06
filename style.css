@@ -40,6 +40,11 @@ img:hover {
     padding: 5px 8px;
     border-radius: 5px;
     font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
 }
 
 .dark-mode {

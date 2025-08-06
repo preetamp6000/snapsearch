@@ -7,14 +7,12 @@ const showMoreBtn = document.getElementById("show-more-btn");
 const loader = document.getElementById("loader");
 const darkModeToggle = document.getElementById("darkModeToggle");
 
-let keyword = "";
 let page = 1;
 
 darkModeToggle.addEventListener("change", () => {
     const html = document.documentElement;
     html.setAttribute("data-bs-theme", darkModeToggle.checked ? "dark" : "light");
 });
-
 
 async function searchImages() {
     loader.style.display = "block";
@@ -38,7 +36,7 @@ async function searchImages() {
             col.className = "col-12 col-sm-6 col-md-4 col-lg-3";
 
             const card = document.createElement("div");
-            card.className = "card position-relative";
+            card.className = "card position-relative p-2";
 
             const img = document.createElement("img");
             img.src = result.urls.small;
@@ -48,11 +46,18 @@ async function searchImages() {
             const downloadBtn = document.createElement("a");
             downloadBtn.href = result.links.download;
             downloadBtn.target = "_blank";
-            downloadBtn.innerText = "⬇";
+            downloadBtn.rel = "noopener noreferrer";
+            downloadBtn.innerText = "Download";
             downloadBtn.className = "download-btn position-absolute";
+            downloadBtn.title = "Download image from Unsplash";
+
+            const author = document.createElement("p");
+            author.className = "text-muted small mt-2 mb-0";
+            author.textContent = `📷 ${result.user.name}`;
 
             card.appendChild(img);
             card.appendChild(downloadBtn);
+            card.appendChild(author);
             col.appendChild(card);
             searchResult.appendChild(col);
         });
@@ -64,7 +69,6 @@ async function searchImages() {
         loader.style.display = "none";
     }
 }
-
 
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault();

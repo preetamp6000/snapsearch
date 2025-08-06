@@ -6,11 +6,8 @@
     <meta name="google-site-verification" content="VJE22Kot2nMI72MClHSszuvWa_ja39i4sZ3JW-K-lko" />
     <title>SnapSearch - Image Finder</title>
 
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-body text-body">
@@ -18,31 +15,29 @@
     <div class="container text-center py-5">
         <h1 class="title mb-4">SnapSearch 🔍</h1>
 
-        
         <div class="form-check form-switch d-flex justify-content-end mb-3">
             <input class="form-check-input" type="checkbox" id="darkModeToggle">
             <label class="form-check-label ms-2" for="darkModeToggle">Dark Mode</label>
         </div>
 
-        
         <form id="search-form" class="d-flex justify-content-center mb-4">
             <input type="text" id="search-box" class="form-control form-control-lg w-50 rounded-pill shadow-sm" placeholder="Search high quality images...">
             <button class="btn btn-danger ms-3 rounded-pill px-4" type="submit">Search</button>
         </form>
 
-       
         <div id="loader" class="text-center my-4" style="display: none;">
             <div class="spinner-border text-primary" role="status"></div>
         </div>
 
-       
         <div id="search-result" class="row justify-content-center g-4"></div>
 
-        
         <button id="show-more-btn" class="btn btn-outline-primary mt-4" style="display: none;">Show More</button>
+
+        <footer class="text-center mt-5 text-muted">
+            Images powered by <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>
+        </footer>
     </div>
 
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
